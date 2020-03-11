@@ -1,0 +1,15 @@
+# Create a Non-Root User inside a Dockerfile
+
+# Default user: root
+# Recommended:  create a non-root user, with restricted privileges
+
+# Dockerfile
+#...
+# create a user called resin
+RUN useradd --user-group --shell /bin/false newuser  
+
+# switch to newuser
+USER newuser
+
+# run next steps as newuser
+#...  
